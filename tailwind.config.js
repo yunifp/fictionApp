@@ -17,7 +17,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Geist Variable"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Outfit"', '"Geist Variable"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -63,16 +63,22 @@ export default {
         "fade-in-up": {
           "0%": {
             opacity: 0,
-            transform: "translateY(20px)",
+            transform: "translateY(30px)", // Diperbesar sedikit jaraknya
           },
           "100%": {
             opacity: 1,
             transform: "translateY(0)",
           },
         },
+        // Tambahan untuk efek kilap di button
+        "shimmer": {
+          "100%": { transform: "translateX(100%)" },
+        }
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        // Menggunakan cubic-bezier agar animasinya smooth/mahal
+        "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "shimmer": "shimmer 2s infinite",
       },
     },
   },

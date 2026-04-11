@@ -1,15 +1,15 @@
-import type { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/shared/Navbar";
+import Footer from "../components/shared/Footer";
 
-interface ClientLayoutProps {
-  children: ReactNode;
-}
-
-export default function ClientLayout({ children }: ClientLayoutProps) {
+export default function ClientLayout() {
   return (
-    <div className="relative min-h-screen bg-zinc-950 font-sans">
+    <div className="min-h-screen bg-zinc-950 flex flex-col font-sans">
       <Navbar />
-      <main className="w-full">{children}</main>
+      <main className="flex-1 w-full relative">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }
