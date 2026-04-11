@@ -22,39 +22,40 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent"></div>
 
       {/* Konten Hero */}
-      <div className="relative z-10 max-w-3xl">
-        {/* FONT DIUBAH: font-normal, teks diperkecil sedikit agar pas seperti di gambar */}
-        <h1 className="text-4xl md:text-5xl font-normal text-white leading-[1.3] mb-6 opacity-0 animate-fade-in-up">
+      <div className="relative z-10 max-w-4xl">
+        
+        {/* FONT LIGHT: Dibuat tipis dan lebar sesuai referensi gambar */}
+        <h1 className="text-5xl md:text-6xl font-light text-white leading-[1.2] mb-6 opacity-0 animate-fade-in-up tracking-wide">
           Unveil the Unseen. <br />
-          <span className="text-[#00AFF0]">Premium Access</span> <br />
+          <span className="text-[#00AFF0] font-normal">Premium Access</span> <br />
           to Exclusive Private Content.
         </h1>
         
-        {/* FONT DIUBAH: text-lg agar tidak terlalu tebal/besar */}
-        <p className="text-lg text-gray-300 mb-10 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-100">
+        {/* PARAGRAF TIPIS */}
+        <p className="text-lg text-gray-300 font-light mb-12 max-w-2xl leading-relaxed opacity-0 animate-fade-in-up delay-100">
           Unlock intimacy like never before. Dive into a discreet world where elite models share their private content directly with you. Experience premium, uncensored interaction today.
         </p>
 
         {/* Button & Avatars Section */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 opacity-0 animate-fade-in-up delay-200">
-          {/* Tombol disesuaikan proporsinya */}
-          <Button className="rounded-full bg-[#00AFF0] hover:bg-[#0099D1] text-white px-8 py-6 text-base font-medium transition-all duration-300 hover:scale-105">
-            Pick Your Fetish
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 opacity-0 animate-fade-in-up delay-200">
+          
+          {/* FIX BUTTON PUTIH: Gunakan !bg-[#00AFF0] agar menang dari dark mode Shadcn */}
+          <Button className="rounded-full !bg-[#00AFF0] hover:!bg-[#0099D1] !text-white px-10 py-7 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 border-0">
+            Choose Your Fetish
           </Button>
 
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((src, i) => (
-                <Avatar key={i} className="w-12 h-12 border-2 border-zinc-900 object-cover">
+                <Avatar key={i} className="w-14 h-14 border-2 border-zinc-900 object-cover">
                   <AvatarImage src={src} alt={`Model ${i + 1}`} />
                   <AvatarFallback>M</AvatarFallback>
                 </Avatar>
               ))}
             </div>
             <div className="flex flex-col">
-              {/* Teks angka dibuat font-medium (tidak terlalu bold) */}
-              <span className="text-white font-medium text-lg leading-none mb-1">5K+</span>
-              <span className="text-gray-400 text-sm">Fetish Models</span>
+              <span className="text-white font-medium text-xl leading-none mb-1">5K+</span>
+              <span className="text-gray-400 font-light text-sm">Fetish Models</span>
             </div>
           </div>
         </div>
